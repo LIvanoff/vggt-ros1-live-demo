@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<package format="2">
+  <name>vggt_scene</name><version>0.1.0</version>
+  <description>ROS 1 live coding: camera bag to a VGGT reconstruction.</description>
+  <maintainer email="teacher@example.invalid">Course instructor</maintainer>
+  <license>MIT</license>
+  <buildtool_depend>catkin</buildtool_depend>
+  <depend>rospy</depend><depend>sensor_msgs</depend><depend>std_msgs</depend>
+</package>

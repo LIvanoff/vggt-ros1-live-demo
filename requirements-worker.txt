@@ -1,0 +1,9 @@
+# Install torch from its CPU wheel index before this file.
+accelerate==1.10.1
+huggingface-hub==0.34.4
+safetensors==0.6.2
+einops==0.8.1
+rerun-sdk==0.23.4
+numpy==2.2.6
+Pillow==11.3.0
+psutil==7.0.0

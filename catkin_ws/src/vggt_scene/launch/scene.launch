@@ -1,0 +1,10 @@
+<launch>
+  <arg name="frames" default="2"/>
+  <arg name="stride" default="1"/>
+  <param name="use_sim_time" value="true"/>
+  <node pkg="vggt_scene" type="scene_node.py" name="vggt_scene" output="screen">
+    <param name="frames" value="$(arg frames)"/>
+    <param name="stride" value="$(arg stride)"/>
+    <param name="bridge" value="/demo/bridge"/>
+  </node>
+</launch>

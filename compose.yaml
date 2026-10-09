@@ -1,0 +1,29 @@
+services:
+  ros:
+    image: vggt-ros1:noetic-v1
+    build:
+      context: .
+      dockerfile: docker/Dockerfile.ros
+    working_dir: /demo/catkin_ws
+    user: "${LOCAL_UID:-0}:${LOCAL_GID:-0}"
+    network_mode: none
+    volumes:
+      - ./:/demo
+    environment:
+      HOME: /tmp
+      ROS_MASTER_URI: http://127.0.0.1:11311
+      ROS_HOSTNAME: localhost
+    command: sleep infinity
+  worker:
+    profiles: [jetson]
+    image: vggt-worker:thor-experimental
+    build:
+      context: .
+      dockerfile: docker/Dockerfile.jetson
+      args:
+        TORCH_IMAGE: ${TORCH_IMAGE:-nvcr.io/nvidia/pytorch:25.08-py3}
+    working_dir: /demo
+    volumes:
+      - ./:/demo
+    gpus: all
+    shm_size: 2gb

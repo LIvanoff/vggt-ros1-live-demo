@@ -1,0 +1,39 @@
+{
+  "passed": true,
+  "model_inference_tested": true,
+  "fixture": false,
+  "frames": 2,
+  "points": 66080,
+  "topic": "/vggt/points",
+  "frame_id": "vggt_world",
+  "xyz_rgb_exact_match": true,
+  "seconds_bag_to_cloud": 7.561997570000017,
+  "bounds_arbitrary_units": [
+    [
+      -0.72319495677948,
+      -0.13331769406795502,
+      0.24675893783569336
+    ],
+    [
+      0.8685004711151123,
+      0.18786771595478058,
+      1.1070117950439453
+    ]
+  ],
+  "job": "6398e93e88e040dbb7445be2d26e08e8",
+  "worker_peak_rss_bytes": 1815891968,
+  "system_min_available_bytes": 2242846720,
+  "total_seconds": 44.2650000000001,
+  "width": 280,
+  "checked_at": "2026-10-09T11:57:03.001947+03:00",
+  "seconds": 4.163709400000016,
+  "device": "cpu",
+  "cached": false,
+  "precision": "int8",
+  "frame_stamps_ns": [
+    1631820942499829000,
+    1631820942999829000
+  ],
+  "tested_platform": "Windows x86_64 CPU; original live_vggt_ros1 version before CUDA/export changes",
+  "jetson_tested": false
+}

@@ -1,0 +1,10 @@
+# NVIDIA's Thor guide uses this ARM64-capable PyTorch container.
+# Override TORCH_IMAGE to match your installed JetPack/driver if needed.
+ARG TORCH_IMAGE=nvcr.io/nvidia/pytorch:25.08-py3
+FROM ${TORCH_IMAGE}
+WORKDIR /demo
+COPY requirements-worker.txt /tmp/requirements-worker.txt
+# Keep the CUDA PyTorch supplied by NVIDIA. Do not install the CPU wheel.
+RUN python3 -m pip install --no-cache-dir -r /tmp/requirements-worker.txt
+ENV PYTHONUNBUFFERED=1
+CMD ["python3", "worker/watch.py", "--device", "cuda", "--precision", "bf16", "--min-free-ram-gib", "16", "--no-viewer", "--once"]
